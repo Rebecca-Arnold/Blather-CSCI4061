@@ -1,0 +1,108 @@
+==12431== Memcheck, a memory error detector
+==12431== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==12431== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==12431== Command: ./bl-client test-03-serv Bruce
+==12431== 
+--12431-- Valgrind options:
+--12431--    --leak-check=full
+--12431--    --show-leak-kinds=all
+--12431--    -v
+--12431--    --track-origins=yes
+--12431-- Contents of /proc/version:
+--12431--   Linux version 4.4.0-101-generic (buildd@lcy01-amd64-006) (gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.5) ) #124-Ubuntu SMP Fri Nov 10 18:29:59 UTC 2017
+--12431-- 
+--12431-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-avx-avx2-bmi
+--12431-- Page sizes: currently 4096, max supported 4096
+--12431-- Valgrind library directory: /usr/lib/valgrind
+--12431-- Reading syms from /home/vuong046/csci4061/Project_2/bl-client
+--12431-- Reading syms from /lib/x86_64-linux-gnu/ld-2.23.so
+--12431--   Considering /lib/x86_64-linux-gnu/ld-2.23.so ..
+--12431--   .. CRC mismatch (computed 9bc477cd wanted 3da2f12a)
+--12431--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.23.so ..
+--12431--   .. CRC is valid
+--12431-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--12431--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--12431--   .. CRC mismatch (computed eea41ea9 wanted 2009db78)
+--12431--    object doesn't have a symbol table
+--12431--    object doesn't have a dynamic symbol table
+--12431-- Scheduler: using generic scheduler lock implementation.
+--12431-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==12431== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-12431-by-vuong046-on-???
+==12431== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-12431-by-vuong046-on-???
+==12431== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-12431-by-vuong046-on-???
+==12431== 
+==12431== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==12431== don't want to do, unless you know exactly what you're doing,
+==12431== or are doing some strange experiment):
+==12431==   /usr/lib/valgrind/../../bin/vgdb --pid=12431 ...command...
+==12431== 
+==12431== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==12431==   /path/to/gdb ./bl-client
+==12431== and then give GDB the following command
+==12431==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=12431
+==12431== --pid is optional if only one valgrind process is running
+==12431== 
+--12431-- REDIR: 0x401cf90 (ld-linux-x86-64.so.2:strlen) redirected to 0x3809e181 (???)
+--12431-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--12431--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--12431--   .. CRC mismatch (computed 2567ccf6 wanted 49420590)
+--12431--    object doesn't have a symbol table
+--12431-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--12431--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--12431--   .. CRC mismatch (computed 0e27c9a8 wanted ac585421)
+--12431--    object doesn't have a symbol table
+==12431== WARNING: new redirection conflicts with existing -- ignoring it
+--12431--     old: 0x0401cf90 (strlen              ) R-> (0000.0) 0x3809e181 ???
+--12431--     new: 0x0401cf90 (strlen              ) R-> (2007.0) 0x04c31020 strlen
+--12431-- REDIR: 0x401b8e0 (ld-linux-x86-64.so.2:index) redirected to 0x4c30bc0 (index)
+--12431-- REDIR: 0x401bb00 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c320d0 (strcmp)
+--12431-- REDIR: 0x401dcf0 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c35270 (mempcpy)
+--12431-- Reading syms from /lib/x86_64-linux-gnu/libpthread-2.23.so
+--12431--   Considering /usr/lib/debug/.build-id/27/f189ef8db8c3734c6a678e6ef3cb0b206d58b2.debug ..
+--12431--   .. build-id is valid
+--12431-- Reading syms from /lib/x86_64-linux-gnu/libc-2.23.so
+--12431--   Considering /lib/x86_64-linux-gnu/libc-2.23.so ..
+--12431--   .. CRC mismatch (computed b2979fac wanted 1affc958)
+--12431--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.23.so ..
+--12431--   .. CRC is valid
+--12431-- REDIR: 0x50e6a00 (libc.so.6:strcasecmp) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--12431-- REDIR: 0x50e2280 (libc.so.6:strcspn) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--12431-- REDIR: 0x50e8cf0 (libc.so.6:strncasecmp) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--12431-- REDIR: 0x50e46f0 (libc.so.6:strpbrk) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--12431-- REDIR: 0x50e4a80 (libc.so.6:strspn) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--12431-- REDIR: 0x50e614b (libc.so.6:memcpy@GLIBC_2.2.5) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--12431-- REDIR: 0x50e4400 (libc.so.6:rindex) redirected to 0x4c308a0 (rindex)
+--12431-- REDIR: 0x50e2160 (libc.so.6:strcpy) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--12431-- REDIR: 0x50fc9d0 (libc.so.6:__strcpy_sse2_unaligned) redirected to 0x4c31040 (strcpy)
+--12431-- REDIR: 0x50db130 (libc.so.6:malloc) redirected to 0x4c2db20 (malloc)
+--12431-- REDIR: 0x50e2720 (libc.so.6:strlen) redirected to 0x4c30f60 (strlen)
+--12431-- REDIR: 0x50e5ff0 (libc.so.6:__GI_memmove) redirected to 0x4c347e0 (__GI_memmove)
+--12431-- REDIR: 0x50e0cd0 (libc.so.6:strcmp) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--12431-- REDIR: 0x50f6570 (libc.so.6:__strcmp_sse2_unaligned) redirected to 0x4c31f90 (strcmp)
+--12431-- REDIR: 0x50db4f0 (libc.so.6:free) redirected to 0x4c2ed80 (free)
+--12431-- REDIR: 0x50e61b0 (libc.so.6:memset) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--12431-- REDIR: 0x51c9930 (libc.so.6:__memset_avx2) redirected to 0x4c344c0 (memset)
+--12431-- REDIR: 0x50ed760 (libc.so.6:strchrnul) redirected to 0x4c34da0 (strchrnul)
+--12431-- REDIR: 0x50e43c0 (libc.so.6:strncpy) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--12431-- REDIR: 0x50fd000 (libc.so.6:__strncpy_sse2_unaligned) redirected to 0x4c31570 (__strncpy_sse2_unaligned)
+--12431-- REDIR: 0x50dbd10 (libc.so.6:calloc) redirected to 0x4c2faa0 (calloc)
+Bruce>> --12431-- REDIR: 0x50eb470 (libc.so.6:__GI_memcpy) redirected to 0x4c32b00 (__GI_memcpy)
+--12431-- REDIR: 0x50e5060 (libc.so.6:__GI_strstr) redirected to 0x4c354d0 (__strstr_sse2)
+--12431-- REDIR: 0x50e5bf0 (libc.so.6:__GI_memcmp) redirected to 0x4c33b90 (__GI_memcmp)
+--12431-- REDIR: 0x50e0d10 (libc.so.6:__GI_strcmp) redirected to 0x4c31fe0 (__GI_strcmp)
+-- Bruce JOINED --
+[Bruce] : This is a test
+[Bruce] : Is anyone there
+[Bruce] : Alfreeeed!
+Bruce>> --12431-- Reading syms from /soft/gcc/4.9.2/ubuntuamd2010/lib64/libgcc_s.so.1
+
+--12431-- Discarding syms at 0x68259f0-0x68358f8 in /soft/gcc/4.9.2/ubuntuamd2010/lib64/libgcc_s.so.1 due to munmap()
+==12431== 
+==12431== HEAP SUMMARY:
+==12431==     in use at exit: 0 bytes in 0 blocks
+==12431==   total heap usage: 18 allocs, 18 frees, 42,136 bytes allocated
+==12431== 
+==12431== All heap blocks were freed -- no leaks are possible
+==12431== 
+==12431== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==12431== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

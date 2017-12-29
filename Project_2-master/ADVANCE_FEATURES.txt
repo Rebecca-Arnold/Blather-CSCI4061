@@ -1,0 +1,56 @@
+//ADVANCED_FEATURES.txt
+
+What features were implimented and how they are used
+
+
+Server Ping and Disconnected Clients
+
+  In server_handle_client:
+    Set clients last_contact_time to the server time_sec
+
+  In server_tick (advance function):
+    increment servers time_sec
+    
+  In server_ping_clients (advance function):
+    use broadcast ping to asked the client for a lively response. 
+    
+    
+  In server_remove_disconnected:
+    disconnect any client that doesn't respond after a certain amount of time,
+    and broadcast any disconnection to the other clients. 
+    
+    Using the clients last_contact_time and comparing it to the parameters desconnect_secs
+    if the clients time is larger then it should be disconnected.    
+
+Binary Server Log File
+  In void server_start:
+    Added: 
+      created a log file (server_name.log) and initializes it with an empty who_t. 
+      created a semaphore (/server_name.sem) and intializes it to 1
+
+  In Int server_broadcast:
+    Added:
+      writes the messages to the log unless it is the PINGALL. (in this case it does nothing)
+    
+    
+
+
+Last Messages for Client 
+
+  Access the log file to read the last how_ever_many messages from the client and re-broadcast them.
+
+
+who_t for Client and Server
+
+  In server_write_who
+    write to the servers log_fd the current set of clients. 
+    prior to writed lock the semephore, then use pwrite to write
+    the beinning part of the log_fd, once done unlock the semephore. 
+    
+  In server_log_message
+    writes the messages from the clients into the server's log_fd.   
+
+
+
+
+
